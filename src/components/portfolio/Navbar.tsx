@@ -22,6 +22,7 @@ const Navbar = () => {
   };
 
   const navItems = [
+    { label: "Home", id: "hero" },
     { label: "About", id: "about" },
     { label: "Experience", id: "experience" },
     { label: "Skills", id: "skills" },
@@ -32,25 +33,28 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
           >
-            AG
+            Ananay<span className="text-primary">.</span>
           </button>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider"
               >
                 {item.label}
               </button>
@@ -59,21 +63,21 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border">
+          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 py-6 animate-fade-in">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+                className="block w-full text-left px-4 py-3 text-foreground hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider"
               >
                 {item.label}
               </button>
