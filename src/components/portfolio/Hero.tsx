@@ -57,7 +57,7 @@ const Hero = () => {
               size="lg"
               className="border-2 border-primary text-primary hover:bg-primary hover:text-background transition-all"
             >
-              Get A Quote
+              Get in touch
             </Button>
             <a
               href="mailto:ananaygupta.work@gmail.com"
