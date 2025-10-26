@@ -12,15 +12,17 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-start relative overflow-hidden bg-background"
+      className="min-h-screen flex items-center justify-start relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-secondary/5"
     >
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+      
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-0" />
-      
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,138,128,0.3),transparent_70%)]" />
-      </div>
 
       {/* Navigation arrows */}
       <button 
@@ -39,10 +41,10 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-2xl animate-fade-in">
-          <p className="text-primary text-5xl md:text-7xl font-light mb-4">
+          <p className="text-5xl md:text-7xl font-light mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-fade-in">
             Hello
           </p>
-          <h1 className="text-5xl md:text-8xl font-bold mb-6 text-primary">
+          <h1 className="text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             I'm Ananay
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl leading-relaxed">
@@ -55,13 +57,13 @@ const Hero = () => {
               onClick={() => scrollToSection("contact")}
               variant="outline"
               size="lg"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-background transition-all"
+              className="border-2 border-primary text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-background transition-all hover:shadow-lg hover:shadow-primary/50"
             >
               Get in touch
             </Button>
             <a
               href="mailto:ananaygupta.work@gmail.com"
-              className="text-foreground hover:text-primary transition-colors text-lg underline underline-offset-4 flex items-center"
+              className="text-foreground hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent transition-all text-lg underline underline-offset-4 flex items-center"
             >
               ananaygupta.work@gmail.com
             </a>
