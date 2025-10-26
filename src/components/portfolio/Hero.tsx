@@ -48,8 +48,7 @@ const Hero = () => {
             I'm Ananay
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl leading-relaxed">
-            Quality Control Associate at S&P Global with a passion for finance that began at 16. 
-            I specialize in high-accuracy financial operations with proven expertise in syndicated loans and trade settlements.
+            Quality Control Associate at S&P Global with a passion for finance that began at 16.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-8">
